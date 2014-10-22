@@ -9,3 +9,6 @@ Crush.create(sender_id: 2, receiver_id: 1)
 Interest.create(interest: "golf", user: User.all.sample )
 Interest.create(interest: "cooking", user: User.all.sample)
 Interest.create(interest: "shopping", user: User.all.sample)
+
+
+
