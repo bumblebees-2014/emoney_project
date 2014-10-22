@@ -1,34 +1,24 @@
 get '/crush/:id' do |id|
 
-
 @receiver = Interest.where(user_id: id)
-@sender = Interest.where(id: session[:user_id])
+@sender = Interest.where(user_id: session[:user_id])
 
-  @interest_array = []
+@interest_array = []
+@interest_array2 = []
+
   @receiver.each do |i|
     @interest_array << i.interest
   end
 
-  @interest_array2 = []
-  @sender.each do |i|
-    @interest_array2 << i.interest
+  @sender.each do |j|
+    @interest_array2 << j.interest
   end
-
-
-
-# array1 = receiver.make_array_of_interests
-# array2 = sender.make_array_of_interests
-
 @intersection = @interest_array & @interest_array2
-# p "*" * 900
-puts "#{@intersection.size}"
-# p "*" * 900
 
 
-# def find_matching_interests(set1, set2)
-#   @intersection = set1 & set2
-#   puts "this is how many in common: #{@intersection.size}"
-# end
+  if @intersection.size >= 3
+    Crush.create(sender_id: session[:user_id], receiver_id: id)
+  end
   erb :send_crush
 end
 

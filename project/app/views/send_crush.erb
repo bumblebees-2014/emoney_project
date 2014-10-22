@@ -1,5 +1,7 @@
+<% if @intersection.size >= 3 %>
+<%= "Your crush has been sent! you have #{@intersection.size} interests in common" %>
+<% else %>
+<%= "Sorry! not enough of a match!" %>
+<% end %>
 
-<%= @interest_array %>
-<%= @interest_array2 %>
 
-<%= @intersection.size %>

@@ -1,18 +1,40 @@
 <h1><%=@user.name%>'s Profile Page</h1>
 
+<%if !Crush.where(sender_id: session[:user_id], receiver_id: @user.id) %>
+  <% else %>
 <a href="/crush/<%=@user.id%>">send me a crush</a>
-
-<h2> list of interests </h2>
-<% @interest.each do |i| %>
-<h2><%= i.interest %></h2>
 <% end %>
 
-<a href="/interest/new">add new interests</a>
+<h2> list of interests </h2>
+<br><br>
 
+<% if session[:user_id] == @user.id || Crush.where(sender_id: @user.id) %>
+    <% @interest.each do |i| %>
+    <h2><%= i.interest %></h2>
+    <% end %>
+    <a href="/interest/new">add new interests</a>
 <a href="/interest/delete">delete interests</a>
-<!-- put link on each list item so you can see everyone else with same interest -->
+  <% else %>
 
+
+
+
+<!-- put link on each list item so you can see everyone else with same interest -->
+<% end %>
 
 <h2> list of crushes received </h2>
+<ul>
+
+<% @crushes_received.each do |c| %>
+<li><a href="/profile/<%=User.find_by(id: c.sender_id).name %>">
+<%= "you received a crush from #{User.find_by(id: c.sender_id).name}"%></a></li>
+<% end %>
+</ul>
 
 <h2> list of crushes sent </h2>
+<ul>
+<% @crushes_sent.each do |c| %>
+<li><a href="/profile/<%=User.find_by(id: c.receiver_id).name %>">
+<%= "you sent a crush to #{User.find_by(id: c.receiver_id).name}"%></a></li>
+<% end %>
+</ul>

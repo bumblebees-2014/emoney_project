@@ -21,6 +21,7 @@
   <%if session[:user_id] %>
     <a href="/profile/<%=User.find_by(id: session[:user_id]).id %>">Welcome,  <%=User.find_by(id: session[:user_id]).name %></a><br>
     <a href="/logout">Logout</a>
+    <a href="/profile/all">all users</a>
   <% end %>
 
   <%= yield %>
