@@ -1,5 +1,7 @@
 <h1><%=@user.name%>'s Profile Page</h1>
 
+<a href="/crush/<%=@user.id%>">send me a crush</a>
+
 <h2> list of interests </h2>
 <% @interest.each do |i| %>
 <h2><%= i.interest %></h2>
@@ -7,5 +9,10 @@
 
 <a href="/interest/new">add new interests</a>
 
-<a href="/interest/delete">add new interests</a>
+<a href="/interest/delete">delete interests</a>
 <!-- put link on each list item so you can see everyone else with same interest -->
+
+
+<h2> list of crushes received </h2>
+
+<h2> list of crushes sent </h2>

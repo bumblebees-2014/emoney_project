@@ -1,0 +1,13 @@
+<form action="/interest/delete" method="POST" id="form">
+
+    <select name="user[interest]">
+      <% @interest.each do |i| %>
+      <option value="<%= i.interest %>"><%= i.interest %></option>
+      <% end %>
+    </select><br>
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="delete interest" class="button">
+  </form>
+
+
+<!-- check box would be awesome -->

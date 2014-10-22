@@ -17,11 +17,19 @@ post '/interest/new' do
   if @check == nil
     @interest = Interest.create(interest: value, user_id: session[:user_id])
     @interest.save
+  else
+    @interest = Interest.find_or_create_by(interest: value, user_id: session[:user_id])
   end
   redirect "/profile/#{session[:user_id]}"
 end
 
+get "/interest/delete" do
+  @interest = Interest.where(user_id: session[:user_id])
+  erb :delete_interest
+end
+
 delete "/interest/delete" do
-
-
+  interest = Interest.find_by(interest: params[:user][:interest])
+  interest.destroy
+  redirect "/profile/#{session[:user_id]}"
 end
