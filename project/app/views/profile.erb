@@ -1,1 +1,11 @@
-testing route to profile page
+<h1><%=@user.name%>'s Profile Page</h1>
+
+<h2> list of interests </h2>
+<% @interest.each do |i| %>
+<h2><%= i.interest %></h2>
+<% end %>
+
+<a href="/interest/new">add new interests</a>
+
+<a href="/interest/delete">add new interests</a>
+<!-- put link on each list item so you can see everyone else with same interest -->

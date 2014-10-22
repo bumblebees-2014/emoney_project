@@ -1,3 +1,9 @@
+before '/profile/*' do
+  if session[:user_id] == nil
+    redirect '/signin'
+  end
+end
+
 get '/' do
   erb :index
 end
@@ -18,10 +24,7 @@ get "/confirm" do
   erb :confirm
 end
 
-get "/profile/:id" do |id|
-  @user = User.find_by(id: id)
-  erb :profile
-end
+
 
 get "/signin" do
   erb :signin
