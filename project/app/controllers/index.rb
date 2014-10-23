@@ -4,6 +4,7 @@ before '/profile/*' do
   end
 end
 
+
 get '/' do
   erb :index
 end

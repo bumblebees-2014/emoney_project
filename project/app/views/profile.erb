@@ -12,8 +12,9 @@
     <% @interest.each do |i| %>
     <li><h2><%= i.interest %></h2></li>
     <% end %>
-    <a href="/interest/new">add new interests</a>
-<a href="/interest/delete">delete interests</a>
+    <% unless session[:user_id] != @user.id %>
+      <a href="/interest/new">edit interests</a>
+    <% end %>
   <% else %>
 <% end %>
 </ul>
