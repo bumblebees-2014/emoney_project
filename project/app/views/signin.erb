@@ -1,4 +1,7 @@
-<div>
+
+<div id="register">
+  <h1>login</h1>
+
   <form action="/signin" method="POST" id="form">
     <input type="text" name="user[email]" placeholder="email">
     <input type="password" name="user[password]" placeholder="password">
@@ -6,7 +9,8 @@
   </form>
 </div>
 
-
+<div id="account_link">
 <% if !session[:user_id] %>
 <a href="/register">register as new user</a>
 <%end%>
+</div>

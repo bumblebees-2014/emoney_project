@@ -21,7 +21,7 @@ post '/interest/new' do
   redirect "/profile/#{session[:user_id]}"
 end
 
-get '/interest/interest' do |interest|
+get '/interest/:interest' do |interest|
   @users = []
   @interest = Interest.where(interest: interest)
 

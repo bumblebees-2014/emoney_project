@@ -1,3 +1,27 @@
+body {
+  font-family: 'Playfair Display SC', serif;
+  padding: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1{
+text-align: center;
+}
+
+h2{
+  padding: none;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+ul{
+  list-style: none;
+
+}
+
 .container {
   margin: 20px auto;
   width: 600px;
@@ -7,3 +31,67 @@
 th {
   text-align: left;
 }
+
+#title{
+  margin-left: 0%,
+  margin-right: 0%;
+  font-size: 100px;
+}
+
+#login{
+  font-size: 40px;
+  color: #4B0082;
+  text-decoration: none;
+}
+
+#register{
+  text-align: center;
+  margin-top: 30%;
+}
+
+#account_link{
+  font-size: 20px;
+  margin-top: 10%;
+  text-decoration: none;
+  text-align: center
+}
+
+#nav_bar_left a{
+  font-size: 20px;
+  display: inline;
+}
+/*#nav_bar_right a{
+  float: right;
+  display: inline;
+}*/
+
+
+/*PROFILE PAGE*/
+
+#top{
+
+  margin-top: 1px;
+  padding: none;
+}
+
+#interests{
+  text-align: center;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+#interest_list{
+  text-decoration: none;
+  list-style-type: none;
+}
+
+#crushes-left{
+  float: left;
+  margin-left: 10%
+}
+
+#crushes-right{
+  float: right;
+  margin-right: 10%;
+}
+

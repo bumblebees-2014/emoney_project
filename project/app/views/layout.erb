@@ -11,19 +11,26 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
-
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
   <title></title>
 </head>
 <body>
+  <div id="nav_bar_left">
+    <ul>
   <%if session[:user_id] %>
-    <a href="/profile/<%=User.find_by(id: session[:user_id]).id %>">Welcome,  <%=User.find_by(id: session[:user_id]).name %></a><br>
-    <a href="/logout">Logout</a>
-    <a href="/profile/all">all users</a>
+    <li><a href="/profile/<%=User.find_by(id: session[:user_id]).id %>">Welcome,  <%=User.find_by(id: session[:user_id]).name %></a><br></li>
+  <div id="nav_bar_right">
+    <li><a href="/profile/all">all users</a></li>
+    <li><a href="/logout">Logout</a></li>
+  </div>
   <% end %>
-
+</ul>
+</div>
   <%= yield %>
 </body>
 </html>
+
+
