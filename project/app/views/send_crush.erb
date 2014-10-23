@@ -1,7 +1,11 @@
+
+<div id="crushed">
 <% if @intersection.size >= 3 %>
-<%= "Your crush has been sent! you have #{@intersection.size} interests in common" %>
+<h1>SWEET!</h1><br>
+<h1><%= "Your crush has been sent! you have #{@intersection.size} interests in common" %></h1>
 <% else %>
-<%= "Sorry! not enough of a match!" %>
+<h1>CRUSHED!</h1><br>
+<h1><%= "Sorry, not enough of a match!" %></h1>
 <% end %>
 
-
+</div>

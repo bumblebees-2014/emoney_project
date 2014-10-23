@@ -13,6 +13,7 @@ text-align: center;
 
 h2{
   padding: none;
+  margin-right: 5px;
   margin-top: 1px;
   margin-bottom: 1px;
 }
@@ -69,7 +70,7 @@ th {
 /*PROFILE PAGE*/
 
 #top{
-
+  text-align: center;
   margin-top: 1px;
   padding: none;
 }
@@ -93,5 +94,22 @@ th {
 #crushes-right{
   float: right;
   margin-right: 10%;
+}
+
+/*PEOPLE WHO HAVE COMMON INTERESTS*/
+#interest_names{
+  text-align: center;
+  font-size: 50px;
+}
+
+/*DISPLAY ALL USERS*/
+#ALL_USERS{
+  text-align: center;
+  font-size: 50px;
+}
+
+/*WAS IT A MATCH? CRUSHED/SWEET*/
+#crushed{
+  text-align: center;
 }
 

@@ -1,6 +1,9 @@
+<div id="interest_names">
 
+<h1>in common</h1>
 <ul>
 <% @users.each do |u| %>
 <a href="/profile/<%=u.id%>"><li><%= u.name %></li></a>
 <% end %>
 </ul>
+</div>

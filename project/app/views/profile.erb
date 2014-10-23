@@ -1,13 +1,15 @@
     <div id="top">
     <h1><%=@user.name%>'s Profile Page</h1>
+    <% unless session[:user_id] != @user.id %>
+      <a href="/interest/new">edit interests</a>
+    <% end %>
 
-  </div>
 
 <%if Crush.where(sender_id: session[:user_id], receiver_id: @user.id) != [] || @user.id == session[:user_id] %>
   <% else %>
-<a href="/crush/<%=@user.id%>">send me a crush</a>
+<h3><a href="/crush/<%=@user.id%>">send me a crush</a></h3>
 <% end %>
-
+</div>
 
 <div id="interests">
 <h2> list of interests </h2>
