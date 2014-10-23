@@ -23,6 +23,19 @@ post '/interest/new' do
   redirect "/profile/#{session[:user_id]}"
 end
 
+get '/interest/:interest' do |interest|
+  @users = []
+  @interest = Interest.where(interest: interest)
+  @interest.each do |i|
+  @users << User.find_by(id: i.user_id)
+ end
+p "*" * 900
+ p @users
+ p "*" * 900
+
+  erb :interest
+end
+
 get "/interest/delete" do
   @interest = Interest.where(user_id: session[:user_id])
   erb :delete_interest

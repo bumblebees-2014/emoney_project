@@ -1,0 +1,6 @@
+
+<ul>
+<% @users.each do |u| %>
+<a href="/profile/<%=u.id%>"><li><%= u.name %></li></a>
+<% end %>
+</ul>
